@@ -1,4 +1,4 @@
-# AirKeys 🪄📱
+# LG AirKeys 🪄📱
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/airkeys/art/main/banner.png" alt="AirKeys Banner" width="100%" onerror="this.style.display='none'"/>
