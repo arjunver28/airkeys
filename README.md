@@ -1,4 +1,4 @@
-# LG AirKeys 🪄📱
+# AirKeys 🪄📱
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/airkeys/art/main/banner.png" alt="AirKeys Banner" width="100%" onerror="this.style.display='none'"/>
@@ -75,7 +75,7 @@ Whether pointing your phone in the air to direct the on-screen cursor, gliding a
 |:---:|:---:|:---:|:---:|
 | <img src="docs/screenshots/remote.png" width="220" alt="Remote Tab"/> | <img src="docs/screenshots/trackpad.png" width="220" alt="Trackpad Tab"/> | <img src="docs/screenshots/airmouse.png" width="220" alt="Air Mouse Tab"/> | <img src="docs/screenshots/apps.png" width="220" alt="Apps Tab"/> |
 
-*(Screenshots can be placed in `docs/screenshots/`)*
+*(Screenshots can be added to `docs/screenshots/`)*
 
 ---
 
@@ -137,3 +137,78 @@ Get the latest stable release from the [GitHub Releases](https://github.com/rele
    ```bash
    git clone https://github.com/your-username/airkeys.git
    cd airkeys
+   ```
+
+2. **Open in Android Studio**:
+   * Open Android Studio.
+   * Select **Open an Existing Project** and browse to the cloned `airkeys` folder.
+   * Allow Gradle to sync dependencies.
+
+3. **Build via Command Line**:
+   * **Debug Build**:
+     ```powershell
+     # Windows
+     .\gradlew.bat assembleDebug
+
+     # Linux / macOS
+     ./gradlew assembleDebug
+     ```
+   * The generated APK will be located at:
+     ```
+     app/build/outputs/apk/debug/app-debug.apk
+     ```
+
+4. **Install onto Device via ADB**:
+   ```bash
+   adb install -r app/build/outputs/apk/debug/app-debug.apk
+   ```
+
+---
+
+## 🔧 Troubleshooting
+
+<details>
+<summary><strong>1. TV is not discovered automatically</strong></summary>
+
+* Check that both your phone and LG TV are connected to the exact same Wi-Fi SSID.
+* If your router separates **2.4 GHz** and **5 GHz** bands with **AP Isolation** or "Guest Mode", disable AP Isolation so devices can communicate over UDP broadcast.
+* Use the **"Manual IP"** option in the AirKeys discovery dialog to enter your TV's IP address directly (found on your TV under *Settings → Network → Wi-Fi Connection → Advanced Settings*).
+</details>
+
+<details>
+<summary><strong>2. "Pairing Prompt" does not show on the TV</strong></summary>
+
+* Go to TV *Settings → General → Connection → Mobile Connection Management* (or *LG Connect Apps* on older models) and verify it is turned ON.
+* In AirKeys, open the TV list and tap the **Sync / Re-Pair** icon next to your TV to clear cached credentials and force a fresh pairing prompt.
+</details>
+
+<details>
+<summary><strong>3. Mouse pointer doesn't show or move on TV</strong></summary>
+
+* Some TV screens (like native system settings submenus or certain third-party HDMI screens) disable cursor pointer input by default. Launch the Web Browser or Home Screen to test pointer movement.
+* In AirKeys, check the top pointer indicator. If it displays `TV Pointer: Connecting...`, tap the refresh button to renegotiate the pointer socket.
+* If your phone lacks a hardware gyroscope, AirKeys displays an alert banner—simply switch to the **Trackpad** tab for full touch-based cursor navigation.
+</details>
+
+---
+
+## 🤝 Contributing
+
+Contributions, feature requests, and bug reports are welcome!
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Built with ❤️ for webOS TV owners.
+</p>
